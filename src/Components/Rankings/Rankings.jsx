@@ -8,7 +8,6 @@ const Rankings = () => {
         fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=faf990aa96f8410aadb1faf9d951d1ef')
         .then(res => res.json())
         .then(data => setState(data.articles))
-
         .catch((err) => {
             console.log(err);
           });
@@ -17,7 +16,7 @@ const Rankings = () => {
     return (
         <div className="all-news">
                 {
-                newNews.map(news => <News data={news} key={news.url}></News>)
+                newNews?.map(news => <News data={news} key={news.url}></News>)
                 } 
         </div>
     );

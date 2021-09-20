@@ -12,7 +12,7 @@ const News = (pops) => {
             <p className="source"> <small className="source-name">{source.name}</small> <small>{date}</small> </p>
             <h3>{title}</h3>
             <p>{description}</p>
-            <a className="read-more" href={url}>Read More</a>
+            <a className="read-more" target="_blank" href={url}>Read More</a>
         </div>
     );
 };

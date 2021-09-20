@@ -7,6 +7,12 @@
     position: relative;
 }
 
+.news:hover {
+    background-color: #79FFE1;
+    color: black;
+    box-shadow: 3px 3px 3px;
+}
+
 .news a {
     text-decoration: none;
 }

@@ -2,16 +2,17 @@ import React from 'react';
 import './News.css';
 
 const News = (pops) => {
-    const news = pops.data;
-    const date = (news.publishedAt).substring(0, 10)
-    console.log(news);
+    // const news = pops.data;
+    const {publishedAt, urlToImage, source, title, description, url} = pops.data;
+    const date = (publishedAt).substring(0, 10)
+    // console.log(news);
     return (
         <div className="news">
-            <img className="thumbnail" src={news.urlToImage} alt="" />
-            <p className="source"> <small className="source-name">{news.source.name}</small> <small>{date}</small> </p>
-            <h3>{news.title}</h3>
-            <p>{news.description}</p>
-            <a className="read-more" target="_blank" href={news.url}>Read More</a>
+            <img className="thumbnail" src={urlToImage} alt="" />
+            <p className="source"> <small className="source-name">{source.name}</small> <small>{date}</small> </p>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <a className="read-more" href={url}>Read More</a>
         </div>
     );
 };

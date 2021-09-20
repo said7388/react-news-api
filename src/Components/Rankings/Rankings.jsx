@@ -3,17 +3,21 @@ import News from '../News/News';
 import './Rankings.css'
 
 const Rankings = () => {
-    const [state, setstate] = useState([])
+    const [newNews, setState] = useState([])
     useEffect(() => {
         fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=faf990aa96f8410aadb1faf9d951d1ef')
         .then(res => res.json())
-        .then(data => setstate(data.articles))
+        .then(data => setState(data.articles))
+
+        .catch((err) => {
+            console.log(err);
+          });
     },[])
-    console.log(state)
+    // console.log(newNews)
     return (
         <div className="all-news">
                 {
-                state.map(news => <News data={news}></News>)
+                newNews.map(news => <News data={news} key={news.url}></News>)
                 } 
         </div>
     );

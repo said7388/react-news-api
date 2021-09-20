@@ -1,5 +1,5 @@
 import './App.css';
-import Rankings from './Components/Rankings/Rankings';
+import Rankings from './Components/rankings/Rankings';
 
 function App() {
   return (
